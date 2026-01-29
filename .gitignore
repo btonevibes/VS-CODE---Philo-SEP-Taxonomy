@@ -1,0 +1,5 @@
+.git.backup-*
+.gitdata
+DATASET BL/Philo SEP Taxonomy - HFace SEP 6.3 DATASET/2026-01 HuggingFace SEP Philo Dataset_cleaned.csv
+DATASET BL/Philo SEP Taxonomy - HFace SEP 6.3 DATASET/_archive/_RAW Hugging Face stanford-encyclopedia-philosophy DATASET CONVERTED.csv
+DATASET BL/Philo SEP Taxonomy - HFace SEP 6.3 DATASET/_archive/_BACKUP 2026-01 HuggingFace SEP Philo Dataset_cleaned.csv
