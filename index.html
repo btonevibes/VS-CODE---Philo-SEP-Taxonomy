@@ -15,6 +15,7 @@
     :root {
       --primary-color: #f8f9fb;
       --secondary-color: #ffffff;
+      --settings-surface: #ffffff;
       --accent-color: #2563eb;
       --accent-light: #1d4ed8;
       --text-color: #111827;
@@ -45,6 +46,7 @@
     body.theme-dark {
       --primary-color: #0f172a;
       --secondary-color: #111827;
+      --settings-surface: #111827;
       --accent-color: #3b82f6;
       --accent-light: #60a5fa;
       --text-color: #e5e7eb;
@@ -56,6 +58,7 @@
     body.theme-high-contrast {
       --primary-color: #000000;
       --secondary-color: #0b0b0b;
+      --settings-surface: #0b0b0b;
       --accent-color: #ffffff;
       --accent-light: #ffffff;
       --text-color: #ffffff;
@@ -148,7 +151,7 @@
       padding: 0.5rem 0.75rem;
       background-color: var(--bg-light);
       border: 1px solid var(--border-color);
-      border-radius: 4px;
+      border-radius: 0;
       color: var(--text-color);
       font-size: 0.95rem;
     }
@@ -164,7 +167,7 @@
       background-color: var(--accent-color);
       color: white;
       border: none;
-      border-radius: 4px;
+      border-radius: 0;
       cursor: pointer;
       font-size: 0.95rem;
       transition: background-color 0.2s;
@@ -188,6 +191,7 @@
       gap: 1px;
       background-color: var(--border-color);
       min-width: 0;
+      min-height: 0;
     }
 
     .view-content {
@@ -196,13 +200,23 @@
       overflow: hidden;
       background-color: var(--primary-color);
       min-width: 0;
+      min-height: 0;
     }
 
     .view-content.active {
       display: flex;
+      min-height: 0;
     }
+
+    #settingsView {
+      min-height: 0;
+      background-color: var(--settings-surface);
+    }
+
     #settingsView.view-content.active {
-      display: block;
+      display: flex;
+      min-height: 0;
+      background-color: var(--settings-surface);
     }
 
     /* Detail panel */
@@ -287,7 +301,7 @@
       background-color: var(--accent-color);
       color: white;
       padding: 0.25rem 0.75rem;
-      border-radius: 20px;
+      border-radius: 0;
       font-size: 0.8rem;
       white-space: nowrap;
     }
@@ -296,7 +310,7 @@
       max-height: 300px;
       overflow-y: auto;
       border: 1px solid var(--border-color);
-      border-radius: 4px;
+      border-radius: 0;
       background-color: var(--bg-light);
     }
 
@@ -435,7 +449,7 @@
       padding: 0.5rem;
       background-color: var(--bg-light);
       border: 1px solid var(--border-color);
-      border-radius: 4px;
+      border-radius: 0;
       color: var(--text-color);
     }
 
@@ -515,19 +529,21 @@
     }
 
     .settings-note {
-      font-size: 0.8rem;
+      font-size: 0.72rem;
       color: var(--text-muted);
-      margin-top: 0.3rem;
+      margin-top: 0.12rem;
+      line-height: 1.15;
     }
 
     .settings-paragraph {
-      font-size: 0.9rem;
-      margin-bottom: 1rem;
+      font-size: 0.8rem;
+      margin-bottom: 0;
+      line-height: 1.3;
     }
 
     .settings-paragraph-muted {
-      font-size: 0.9rem;
-      line-height: 1.6;
+      font-size: 0.78rem;
+      line-height: 1.3;
       color: var(--text-muted);
     }
 
@@ -572,7 +588,7 @@
       padding: 0.0333rem 0.45rem;
       background: transparent;
       border: 1px solid transparent;
-      border-radius: 6px;
+      border-radius: 0;
       font-weight: 600;
       font-size: 1.14rem;
       cursor: pointer;
@@ -605,7 +621,7 @@
       padding: 0.0299rem 0.45rem;
       background: transparent;
       border: 1px solid transparent;
-      border-radius: 6px;
+      border-radius: 0;
       font-weight: 500;
       font-size: 1.1rem;
       cursor: pointer;
@@ -624,7 +640,7 @@
       padding: 0.0266rem 0.45rem;
       background: transparent;
       border: 1px solid transparent;
-      border-radius: 6px;
+      border-radius: 0;
       font-size: 1.06rem;
       cursor: pointer;
       -webkit-user-select: none;
@@ -642,7 +658,7 @@
       padding: 0.0249rem 0.45rem;
       background: transparent;
       border: 1px solid transparent;
-      border-radius: 6px;
+      border-radius: 0;
       font-size: 1.04rem;
       cursor: pointer;
       -webkit-user-select: none;
@@ -684,7 +700,7 @@
       font-size: 0.7rem;
       background-color: #eff6ff;
       padding: 0.1rem 0.35rem;
-      border-radius: 4px;
+      border-radius: 0;
       white-space: nowrap;
       margin-left: auto;
     }
@@ -698,7 +714,7 @@
       padding: 0.0249rem 0.45rem;
       background-color: transparent;
       border: 1px solid transparent;
-      border-radius: 6px;
+      border-radius: 0;
       font-size: 1.01rem;
       cursor: pointer;
       display: flex;
@@ -721,7 +737,7 @@
       display: inline-block;
       margin-left: 0.2rem;
       padding: 0 0.3rem;
-      border-radius: 3px;
+      border-radius: 0;
       transition: all 0.2s;
     }
 
@@ -836,7 +852,7 @@
       border: 1px solid #e5e7eb;
       background: #ffffff;
       color: #374151;
-      border-radius: 4px;
+      border-radius: 0;
       cursor: pointer;
       font-size: 0.82rem;
     }
@@ -875,6 +891,7 @@
       display: flex;
       flex-direction: column;
       overflow: hidden;
+      min-height: 0;
     }
 
     .compare-left h3 {
@@ -969,6 +986,7 @@
       background-color: var(--primary-color);
       overflow-y: auto;
       padding: 0.9rem;
+      min-height: 0;
     }
 
     .compare-toolbar {
@@ -996,7 +1014,7 @@
     .compare-card {
       background-color: var(--secondary-color);
       border: 1px solid var(--border-color);
-      border-radius: 8px;
+      border-radius: 0;
       padding: 0.5rem;
       font-family: "Roboto Condensed", "Arial Narrow", "Helvetica Neue Condensed", "Helvetica Neue", Arial, sans-serif;
       font-stretch: condensed;
@@ -1165,30 +1183,38 @@
     .settings-container {
       max-width: none;
       margin: 0;
-      padding: 0.3rem 0.6rem;
+      padding: 0.28rem 0.44rem 0.4rem;
       overflow-y: auto;
+      overflow-x: hidden;
       flex: 1;
       width: 100%;
+      min-height: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+      scroll-padding-bottom: 0.4rem;
+      background-color: transparent;
     }
 
     .settings-container h2 {
-      font-size: 1.4rem;
-      margin-bottom: 0.25rem;
+      font-size: 0.98rem;
+      margin-bottom: 0;
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.35rem;
+      line-height: 1.1;
     }
 
     .settings-info-toggle {
-      width: 1.25rem;
-      height: 1.25rem;
+      width: 1rem;
+      height: 1rem;
       border-radius: 50%;
       border: 1px solid var(--border-color);
       color: var(--text-muted);
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      font-size: 0.85rem;
+      font-size: 0.72rem;
       cursor: pointer;
       background: var(--secondary-color);
     }
@@ -1196,61 +1222,141 @@
     .settings-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 0.2rem;
+      gap: 0.24rem 0.7rem;
       align-items: start;
     }
 
-    @media (min-width: 960px) {
+    @media (min-width: 720px) {
       .settings-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (min-width: 1180px) {
+      .settings-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
       }
     }
 
     .settings-section {
-      margin-bottom: 0.125rem;
-      padding-bottom: 0.0875rem;
+      margin: 0;
+      padding: 0.14rem 0 0.1rem;
       border-bottom: 1px solid var(--border-color);
+      min-width: 0;
     }
 
     .settings-section h3 {
-      font-size: 1rem;
-      margin-bottom: 0.1rem;
+      font-size: 0.74rem;
+      margin-bottom: 0.18rem;
       color: var(--accent-light);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      line-height: 1.1;
     }
 
     .settings-item {
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
+      display: grid;
+      align-items: start;
+      gap: 0.06rem 0.4rem;
       padding: 0.05rem 0;
       cursor: pointer;
+      min-width: 0;
+      font-size: 0.82rem;
+      line-height: 1.15;
     }
 
     .settings-item input[type="checkbox"] {
       cursor: pointer;
+      margin: 0;
+      align-self: start;
+      margin-top: 0.12rem;
+    }
+
+    .settings-item-toggle {
+      grid-template-columns: auto minmax(0, 1fr);
+      column-gap: 0.35rem;
+      row-gap: 0.05rem;
+    }
+
+    .settings-item-control {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(128px, 44%);
+      align-items: start;
+      column-gap: 0.5rem;
+      row-gap: 0.08rem;
+    }
+
+    .settings-item-range {
+      grid-template-columns: minmax(0, 1fr) minmax(128px, 44%);
+    }
+
+    .settings-item-toggle > span:first-of-type,
+    .settings-item-control > span:first-of-type {
+      font-size: 0.77rem;
+      color: var(--text-muted);
+      white-space: normal;
+      overflow-wrap: anywhere;
+      line-height: 1.2;
+      min-width: 0;
     }
 
     .settings-item input[type="number"],
-    .settings-item select {
-      flex: 1;
+    .settings-item select,
+    .settings-item input[type="range"] {
+      width: 100%;
+      min-width: 0;
+      align-self: start;
+    }
+
+    #settingsView .control-base,
+    #settingsView input[type="number"] {
+      padding: 0.18rem 0.32rem;
+      font-size: 0.81rem;
+      min-height: 0;
+    }
+
+    #settingsView .control-min-150,
+    #settingsView .control-w-80,
+    #settingsView .control-w-100 {
+      min-width: 0;
+      width: 100%;
+    }
+
+    #settingsView input[type="range"] {
+      margin: 0;
     }
 
     .settings-help-text {
       display: none;
-      font-size: 0.78rem;
+      font-size: 0.68rem;
       color: var(--text-muted);
-      margin-left: 0.35rem;
-      white-space: nowrap;
+      margin-left: 0;
+      white-space: normal;
+      overflow-wrap: anywhere;
+      line-height: 1.2;
     }
 
     body.settings-help-on .settings-help-text {
       display: inline;
     }
 
+    body.settings-help-on .settings-item-control .settings-help-text {
+      display: block;
+      grid-column: 1 / -1;
+      margin-top: 0.04rem;
+    }
+
+    body.settings-help-on .settings-item-toggle .settings-help-text {
+      display: block;
+      grid-column: 2;
+      padding-left: 0;
+      margin-top: 0.02rem;
+    }
+
     .settings-section p {
       margin: 0;
-      line-height: 1.6;
-      font-size: 0.9rem;
+      line-height: 1.28;
+      font-size: 0.79rem;
     }
 
     .settings-section a {
@@ -1286,7 +1392,7 @@
       border: 1px solid var(--border-color);
       border-left: 4px solid var(--accent-color);
       padding: 1rem;
-      border-radius: 4px;
+      border-radius: 0;
       max-width: 300px;
       z-index: 1000;
       animation: slideIn 0.3s ease;
@@ -1309,7 +1415,7 @@
       background: var(--secondary-color);
       color: var(--text-color);
       border: 1px solid var(--border-color);
-      border-radius: 12px;
+      border-radius: 0;
       box-shadow: 0 20px 60px rgba(15, 23, 42, 0.25);
       z-index: 10000;
       display: flex;
@@ -1349,7 +1455,7 @@
 
     .csv-preflight-item {
       border: 1px solid var(--border-color);
-      border-radius: 8px;
+      border-radius: 0;
       padding: 0.75rem;
       background: var(--secondary-color);
     }
@@ -1364,7 +1470,7 @@
       margin: 0.5rem 0 0 0;
       padding: 0.5rem 0.75rem;
       background: var(--bg-light);
-      border-radius: 6px;
+      border-radius: 0;
       white-space: pre-wrap;
       font-size: 0.85rem;
       color: var(--text-muted);
@@ -1438,7 +1544,17 @@
       }
 
       .settings-container {
-        padding: 1rem;
+        padding: 0.24rem 0.34rem 0.38rem;
+      }
+
+      .settings-grid {
+        gap: 0.22rem 0.48rem;
+      }
+
+      .settings-item-control,
+      .settings-item-range {
+        grid-template-columns: minmax(0, 1fr) minmax(120px, 46%);
+        column-gap: 0.4rem;
       }
 
       .compare-grid {
@@ -1475,6 +1591,40 @@
       .view-tab {
         padding: clamp(0.28rem, 1.2vw, 0.38rem) clamp(0.3rem, 1.4vw, 0.5rem);
         font-size: clamp(0.62rem, 2.8vw, 0.82rem);
+      }
+
+      .settings-container {
+        padding: 0.22rem 0.28rem 0.34rem;
+      }
+
+      .settings-container h2 {
+        font-size: 0.94rem;
+      }
+
+      .settings-section h3 {
+        font-size: 0.72rem;
+      }
+
+      .settings-item {
+        font-size: 0.8rem;
+      }
+
+      .settings-item-control,
+      .settings-item-range {
+        grid-template-columns: minmax(0, 1fr) minmax(112px, 48%);
+        column-gap: 0.34rem;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .settings-item-control,
+      .settings-item-range {
+        grid-template-columns: 1fr;
+        row-gap: 0.14rem;
+      }
+
+      body.settings-help-on .settings-item-control .settings-help-text {
+        grid-column: 1;
       }
     }
   </style>
@@ -1550,7 +1700,6 @@
         <div class="cytoscape-shell">
           <div class="cytoscape-toolbar">
             <div>
-              <button class="btn" data-action="cytoscape-layout" data-layout="dagre">Dagre</button>
               <button class="btn" data-action="cytoscape-layout" data-layout="elk">ELK (layered)</button>
               <button class="btn" data-action="cytoscape-fit">Fit</button>
               <button class="btn" data-action="cytoscape-collapse-all">Collapse All</button>
@@ -1605,27 +1754,27 @@
           <div class="settings-grid">
             <div class="settings-section">
               <h3>Display</h3>
-              <label class="settings-item">
+              <label class="settings-item settings-item-toggle">
                 <input type="checkbox" id="darkMode" checked>
                 <span>Dark Mode</span>
                 <span class="settings-help-text">Switches the overall theme.</span>
               </label>
-              <label class="settings-item">
+              <label class="settings-item settings-item-toggle">
                 <input type="checkbox" id="highContrast">
                 <span>High Contrast</span>
                 <span class="settings-help-text">Boosts contrast for readability.</span>
               </label>
-              <label class="settings-item">
+              <label class="settings-item settings-item-toggle">
                 <input type="checkbox" id="reduceMotion">
                 <span>Reduce Motion</span>
                 <span class="settings-help-text">Disables animations.</span>
               </label>
-              <label class="settings-item">
+              <label class="settings-item settings-item-toggle">
                 <input type="checkbox" id="showLabels" checked>
                 <span>Show Node Labels</span>
                 <span class="settings-help-text">Toggle labels across views.</span>
               </label>
-              <label class="settings-item">
+              <label class="settings-item settings-item-toggle">
                 <input type="checkbox" id="showRelations" checked>
                 <span>Show Relations</span>
                 <span class="settings-help-text">Show or hide edges.</span>
@@ -1634,22 +1783,22 @@
 
             <div class="settings-section">
               <h3>Rendering</h3>
-              <label class="settings-item">
+              <label class="settings-item settings-item-toggle">
                 <input type="checkbox" id="antialiasing" checked>
                 <span>Antialiasing</span>
                 <span class="settings-help-text">Smooths rendered lines.</span>
               </label>
-              <label class="settings-item">
+              <label class="settings-item settings-item-control settings-item-range">
                 <span>Node Size:</span>
                 <input type="range" id="nodeSize" min="4" max="20" value="8">
                 <span class="settings-help-text">Scale node markers.</span>
               </label>
-              <label class="settings-item">
+              <label class="settings-item settings-item-control settings-item-range">
                 <span>Edge Thickness:</span>
                 <input type="range" id="edgeThickness" min="1" max="6" value="1">
                 <span class="settings-help-text">Adjust line weight.</span>
               </label>
-              <label class="settings-item">
+              <label class="settings-item settings-item-control settings-item-range">
                 <span>Label Font Size:</span>
                 <input type="range" id="labelFontSize" min="10" max="18" value="12">
                 <span class="settings-help-text">Adjust label size.</span>
@@ -1658,15 +1807,14 @@
 
             <div class="settings-section">
               <h3>Cytoscape</h3>
-              <label class="settings-item">
+              <label class="settings-item settings-item-control">
                 <span>Default Layout:</span>
                 <select id="cytoscapeDefaultLayout" class="control-base control-min-150" aria-label="Cytoscape default layout" title="Cytoscape default layout">
-                  <option value="dagre">Dagre</option>
                   <option value="elk">ELK</option>
                 </select>
                 <span class="settings-help-text">Preferred layout engine.</span>
               </label>
-              <label class="settings-item">
+              <label class="settings-item settings-item-control">
                 <span>Layout Preset:</span>
                 <select id="cytoscapeLayoutPreset" class="control-base control-min-150" aria-label="Cytoscape layout preset" title="Cytoscape layout preset">
                   <option value="compact">Compact</option>
@@ -1679,7 +1827,7 @@
 
             <div class="settings-section">
               <h3>Search</h3>
-              <label class="settings-item">
+              <label class="settings-item settings-item-control">
                 <span>Mode:</span>
                 <select id="searchMode" class="control-base control-min-150" aria-label="Search mode" title="Search mode">
                   <option value="highlight">Highlight</option>
@@ -1687,7 +1835,7 @@
                 </select>
                 <span class="settings-help-text">Highlight or filter results.</span>
               </label>
-              <label class="settings-item">
+              <label class="settings-item settings-item-control">
                 <span>Min Characters:</span>
                 <input type="number" id="searchMinChars" min="1" max="6" value="2" class="control-base control-w-80">
                 <span class="settings-help-text">Minimum search length.</span>
@@ -1696,17 +1844,17 @@
 
             <div class="settings-section">
               <h3>Tree View</h3>
-              <label class="settings-item">
+              <label class="settings-item settings-item-control">
                 <span>Default Expand Depth:</span>
                 <input type="number" id="treeExpandDepth" min="0" max="4" value="0" class="control-base control-w-80">
                 <span class="settings-help-text">How many levels open.</span>
               </label>
-              <label class="settings-item">
+              <label class="settings-item settings-item-toggle">
                 <input type="checkbox" id="treeAutoExpand" checked>
                 <span>Auto-Expand on Search</span>
                 <span class="settings-help-text">Open matches during search.</span>
               </label>
-              <label class="settings-item">
+              <label class="settings-item settings-item-toggle">
                 <input type="checkbox" id="treeHideReferences">
                 <span>Hide Reference (*) Nodes</span>
                 <span class="settings-help-text">Hide duplicate reference entries.</span>
@@ -1715,12 +1863,12 @@
 
             <div class="settings-section">
               <h3>Compare</h3>
-              <label class="settings-item">
+              <label class="settings-item settings-item-control">
                 <span>Max Items:</span>
                 <input type="number" id="compareMaxItems" min="2" max="20" value="10" class="control-base control-w-80">
                 <span class="settings-help-text">Limit comparison size.</span>
               </label>
-              <label class="settings-item">
+              <label class="settings-item settings-item-control">
                 <span>Auto-Sort:</span>
                 <select id="compareAutoSort" class="control-base control-min-150" aria-label="Compare auto sort" title="Compare auto sort">
                   <option value="none">None</option>
@@ -1729,7 +1877,7 @@
                 </select>
                 <span class="settings-help-text">Keep items ordered.</span>
               </label>
-              <label class="settings-item">
+              <label class="settings-item settings-item-toggle">
                 <input type="checkbox" id="compareHideEmptyDefault" checked>
                 <span>Hide Empty Sections by Default</span>
                 <span class="settings-help-text">Hide empty description blocks.</span>
@@ -1738,12 +1886,12 @@
 
             <div class="settings-section">
               <h3>MarkMap</h3>
-              <label class="settings-item">
+              <label class="settings-item settings-item-control">
                 <span>Default Expand Depth:</span>
                 <input type="number" id="markmapDefaultDepth" min="1" max="4" value="2" class="control-base control-w-80">
                 <span class="settings-help-text">Initial expand depth.</span>
               </label>
-              <label class="settings-item">
+              <label class="settings-item settings-item-control">
                 <span>Line Palette:</span>
                 <select id="markmapPalette" class="control-base control-min-150" aria-label="Markmap palette" title="Markmap palette">
                   <option value="classic">Classic</option>
@@ -1752,17 +1900,17 @@
                 </select>
                 <span class="settings-help-text">Line color theme.</span>
               </label>
-              <label class="settings-item">
+              <label class="settings-item settings-item-toggle">
                 <input type="checkbox" id="markmapShowDots" checked>
                 <span>Show Node Dots</span>
                 <span class="settings-help-text">Toggle node markers.</span>
               </label>
-              <label class="settings-item">
+              <label class="settings-item settings-item-control settings-item-range">
                 <span>Line Width:</span>
                 <input type="range" id="markmapLineWidth" min="1" max="6" value="2">
                 <span class="settings-help-text">Stroke thickness.</span>
               </label>
-              <label class="settings-item">
+              <label class="settings-item settings-item-control settings-item-range">
                 <span>Label Font Size:</span>
                 <input type="range" id="markmapFontSize" min="10" max="20" value="14">
                 <span class="settings-help-text">Text size in MarkMap.</span>
@@ -1771,7 +1919,7 @@
 
             <div class="settings-section">
               <h3>Performance</h3>
-              <label class="settings-item">
+              <label class="settings-item settings-item-control">
                 <span>Max Node Render:</span>
                 <input type="number" id="maxNodeRender" value="2500" min="100" max="5000" class="control-base control-w-100">
                 <span class="settings-help-text">Cap nodes to keep fast.</span>
@@ -1780,25 +1928,25 @@
                 Shows current FPS and memory usage
               </p>
             </div>
-          </div>
 
-          <div class="settings-section">
-            <h3>Data</h3>
-            <p class="settings-paragraph">
-              <strong>Edition:</strong> ${appState.data.metadata.edition || 'Winter 2021'}<br>
-              <strong>Nodes:</strong> ${appState.data.nodes.size}<br>
-              <strong>Edges:</strong> ${appState.data.edges.length}<br>
-              <strong>Domains:</strong> ${appState.data.metadata.domains?.length || 0}
-            </p>
-          </div>
+            <div class="settings-section">
+              <h3>Data</h3>
+              <p class="settings-paragraph">
+                <strong>Edition:</strong> <span id="settingsDataEdition">Winter 2021</span><br>
+                <strong>Nodes:</strong> <span id="settingsDataNodes">0</span><br>
+                <strong>Edges:</strong> <span id="settingsDataEdges">0</span><br>
+                <strong>Domains:</strong> <span id="settingsDataDomains">0</span>
+              </p>
+            </div>
 
-          <div class="settings-section">
-            <h3>About</h3>
-            <p class="settings-paragraph-muted">
-              PHILOSOPHY TAXONOMY EXPLORER v1.0<br>
-              Visualizing Stanford Encyclopedia of Philosophy (Winter 2021)<br>
-              <a href="https://plato.stanford.edu" class="settings-link">plato.stanford.edu</a>
-            </p>
+            <div class="settings-section">
+              <h3>About</h3>
+              <p class="settings-paragraph-muted">
+                PHILOSOPHY TAXONOMY EXPLORER v1.0<br>
+                Visualizing Stanford Encyclopedia of Philosophy (Winter 2021)<br>
+                <a href="https://plato.stanford.edu" class="settings-link">plato.stanford.edu</a>
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -1806,8 +1954,6 @@
   </div>
 
   <script src="vendor/cytoscape.min.js"></script>
-  <script src="vendor/dagre.min.js"></script>
-  <script src="vendor/cytoscape-dagre.js"></script>
   <script src="vendor/elk.bundled.js"></script>
   <script src="vendor/cytoscape-elk.js"></script>
 
@@ -1994,7 +2140,7 @@
         edgeThickness: 1,
         labelFontSize: 12,
         cytoscapeLayoutPreset: 'balanced',
-        cytoscapeDefaultLayout: 'dagre',
+        cytoscapeDefaultLayout: 'elk',
         searchMode: 'highlight',
         searchMinChars: 2,
         treeExpandDepth: 0,
@@ -2187,6 +2333,9 @@
         const parsed = JSON.parse(raw);
         if (parsed && typeof parsed === 'object') {
           appState.settings = { ...appState.settings, ...parsed };
+          if (appState.settings.cytoscapeDefaultLayout !== 'elk') {
+            appState.settings.cytoscapeDefaultLayout = 'elk';
+          }
         }
       } catch (e) {
         console.warn('Failed to load settings:', e);
@@ -2205,6 +2354,18 @@
       document.body.classList.toggle('theme-dark', !!appState.settings.darkMode && !appState.settings.highContrast);
       document.body.classList.toggle('theme-high-contrast', !!appState.settings.highContrast);
       document.body.classList.toggle('reduce-motion', !!appState.settings.reduceMotion);
+    }
+
+    function updateSettingsSummary() {
+      const setText = (id, value) => {
+        const el = document.getElementById(id);
+        if (el) el.textContent = value;
+      };
+
+      setText('settingsDataEdition', appState.data.metadata?.edition || 'Winter 2021');
+      setText('settingsDataNodes', appState.data.nodes?.size || 0);
+      setText('settingsDataEdges', appState.data.edges?.length || 0);
+      setText('settingsDataDomains', appState.data.metadata?.domains?.length || 0);
     }
 
     function applySettingsToUI() {
@@ -2453,6 +2614,7 @@
             tabEl.classList.add('active');
           }
         this.currentView = view;
+        document.body.dataset.view = view;
 
         // Initialize view if needed
         if (view === 'tree') {
@@ -4067,9 +4229,8 @@
 
     const ViewCytoscape = {
       cy: null,
-      currentLayout: 'dagre',
+      currentLayout: 'elk',
       resizeObserver: null,
-      _dagreRegistered: false,
       _elkRegistered: false,
       collapsedNodes: new Set(),
 
@@ -4225,10 +4386,6 @@
       },
 
       registerLayouts() {
-        if (typeof cytoscapeDagre !== 'undefined' && !this._dagreRegistered) {
-          cytoscape.use(cytoscapeDagre);
-          this._dagreRegistered = true;
-        }
         if (typeof cytoscapeElk !== 'undefined' && !this._elkRegistered) {
           cytoscape.use(cytoscapeElk);
           this._elkRegistered = true;
@@ -4308,23 +4465,23 @@
 
       applyLayout(layoutName) {
         if (!this.cy) return;
-        this.currentLayout = layoutName || this.currentLayout;
+        this.currentLayout = 'elk';
+        if (layoutName && layoutName !== 'elk') {
+          appState.settings.cytoscapeDefaultLayout = 'elk';
+          saveSettings();
+        }
         this.updateToolbar();
 
-        if (this.currentLayout === 'dagre' && typeof cytoscapeDagre === 'undefined') {
-          showToast('Dagre layout plugin not found. Check vendor/cytoscape-dagre.js', 'warning');
-          return;
-        }
-        if (this.currentLayout === 'elk' && (typeof cytoscapeElk === 'undefined' || typeof ELK === 'undefined')) {
+        if (typeof cytoscapeElk === 'undefined' || typeof ELK === 'undefined') {
           showToast('ELK layout plugin not found. Check vendor/elk.bundled.js and vendor/cytoscape-elk.js', 'warning');
           return;
         }
 
         const preset = appState.settings.cytoscapeLayoutPreset || 'balanced';
         const presetMap = {
-          compact: { nodeSep: 40, rankSep: 90, spacingFactor: 1.0, elkNode: 30, elkEdge: 30 },
-          balanced: { nodeSep: presetValues.nodeSep, rankSep: presetValues.rankSep, spacingFactor: presetValues.spacingFactor, elkNode: 40, elkEdge: 40 },
-          spacious: { nodeSep: 90, rankSep: 200, spacingFactor: 1.3, elkNode: 60, elkEdge: 60 }
+          compact: { elkNode: 30, elkEdge: 30 },
+          balanced: { elkNode: 40, elkEdge: 40 },
+          spacious: { elkNode: 60, elkEdge: 60 }
         };
         const presetValues = presetMap[preset] || presetMap.balanced;
 
@@ -4334,7 +4491,7 @@
           padding: 30
         };
 
-        const layoutOptions = this.currentLayout === 'elk' ? {
+        const layoutOptions = {
           ...layoutDefaults,
           name: 'elk',
           elk: {
@@ -4343,32 +4500,15 @@
             'elk.spacing.nodeNode': presetValues.elkNode,
             'elk.spacing.edgeNode': presetValues.elkEdge
           }
-        } : {
-          ...layoutDefaults,
-          name: 'dagre',
-          rankDir: 'LR',
-          ranker: 'network-simplex',
-          align: 'UL',
-          nodeSep: presetValues.nodeSep,
-          rankSep: presetValues.rankSep,
-          spacingFactor: presetValues.spacingFactor
         };
 
         try {
           this.cy.layout(layoutOptions).run();
-          if (this.currentLayout === 'dagre') {
-            requestAnimationFrame(() => {
-              if (!this.cy) return;
-              this.cy.zoom(0.6);
-              this.cy.center();
-            });
-          } else {
-            requestAnimationFrame(() => {
-              if (!this.cy) return;
-              this.cy.zoom(0.6);
-              this.cy.center();
-            });
-          }
+          requestAnimationFrame(() => {
+            if (!this.cy) return;
+            this.cy.zoom(0.6);
+            this.cy.center();
+          });
         } catch (error) {
           console.warn('Cytoscape layout failed:', error);
           showToast(`Cytoscape layout failed: ${error.message}`, 'warning');
@@ -4414,7 +4554,7 @@
         }
 
         this.registerLayouts();
-        this.currentLayout = appState.settings.cytoscapeDefaultLayout || this.currentLayout;
+        this.currentLayout = 'elk';
 
         if (!this.cy) {
           container.innerHTML = '';
@@ -4510,7 +4650,7 @@
         const padding = Math.max(4, Math.round((appState.settings.nodeSize || 8) / 2));
         const showLabels = !!appState.settings.showLabels;
         const showRelations = !!appState.settings.showRelations;
-        this.currentLayout = appState.settings.cytoscapeDefaultLayout || this.currentLayout;
+        this.currentLayout = 'elk';
         this.cy.style()
           .selector('node')
           .style({
@@ -5624,6 +5764,7 @@
           totalEdges: appState.data.edges.length,
           domains: Array.from(domainsSet).sort()
         };
+        updateSettingsSummary();
 
         console.log(`Loaded ${appState.data.nodes.size} nodes and ${appState.data.edges.length} edges`);
 
